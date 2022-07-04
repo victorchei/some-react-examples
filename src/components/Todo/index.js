@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import todo from "../../store/todo";
 import "./index.css";
 import { observer } from "mobx-react-lite";
