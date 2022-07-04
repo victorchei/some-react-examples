@@ -1,0 +1,19 @@
+.counter {   
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+
+.btns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
