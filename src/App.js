@@ -1,8 +1,10 @@
+import Culculator from "./componets/Culculator";
+
 function App() {
   return (
-    <div>     
-          My app
-    </div>
+    <>
+      <Culculator/>
+    </>
   );
 }
 
