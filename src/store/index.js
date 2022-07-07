@@ -1,11 +1,3 @@
-import { createStore, combineReducers } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { cashReducer } from "./cashReducer";
-import { customerReducer } from "./customerReducer";
+import configureStore from "./configureStore";
 
-const rootReducer = combineReducers({
-    cash: cashReducer,
-    customers: customerReducer,
-})
-
-export const store = createStore(rootReducer, composeWithDevTools());
+export const store = configureStore();
