@@ -13,10 +13,11 @@ import {
   ListItemText,
   ListItemIcon,
   Hidden,
+  Link,
 } from '@mui/material'
 import { Settings } from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 
 const pages = ['Home', 'Reccomend', 'Settings']
 
@@ -27,16 +28,17 @@ const Navigation = () => {
     <Box sx={{ width: 250 }} role="presentation">
       <List>
         {pages.map((page, i) => (
-          <Link key={i} to={i === 0 ? '/' : `${page.toLowerCase()}`}>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <Settings />
-                </ListItemIcon>
-                <ListItemText primary={page} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
+          <ListItem disablePadding key={i}>
+            <ListItemButton
+              component={RouterLink}
+              to={i === 0 ? '/' : `${page.toLowerCase()}`}
+            >
+              <ListItemIcon>
+                <Settings />
+              </ListItemIcon>
+              <ListItemText primary={page} />
+            </ListItemButton>
+          </ListItem>
         ))}
       </List>
     </Box>
@@ -64,11 +66,14 @@ const Navigation = () => {
             </Typography>
             <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
               {pages.map((page, i) => (
-                <Link key={i} to={i === 0 ? '/' : `${page.toLowerCase()}`}>
-                  <Button sx={{ my: 2, color: 'white', display: 'block' }}>
-                    {page}
-                  </Button>
-                </Link>
+                <Button
+                  component={RouterLink}
+                  key={i}
+                  to={i === 0 ? '/' : `${page.toLowerCase()}`}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page}
+                </Button>
               ))}
             </Box>
             <Button color="inherit">Login</Button>
